@@ -1,0 +1,114 @@
+@import './mapas.less';
+
+@breakpointMobile: ~"(max-width: 767px)";
+@breakpointTablet: ~"(max-width: 1023px)";
+
+.marginbottom8 {
+    margin-bottom: 8px;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    background-color: #colors[backgroundColor];
+    color: #colors[textColor];
+}
+
+li {
+    list-style: none;
+}
+
+.container {
+    max-width: 960px;
+    width: 100%;
+    margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    @media @breakpointTablet {
+        max-width: 90%;
+    }
+
+    @media @breakpointMobile {
+        max-width: 80%;
+    }
+}
+
+header {
+    padding-bottom: 24px;
+    
+    .profile-avatar {
+        margin: 0 auto 24px;
+        display: block;
+        border-radius: 50%;
+    }
+}
+
+.profile-bio {
+    text-align: center;
+
+    &-name {
+        font-size: 16px;
+        .marginbottom8();
+    }
+
+    &-subtitle {
+        font-size: 14px;
+        .marginbottom8();
+    }
+
+    &-description {
+        font-size: 14px;
+    }
+}
+
+.social-links {
+    display: flex;
+    justify-content: space-between;
+    max-width: 240px;
+    width: 100%;
+    margin: 0 auto;
+
+    li {
+        img {
+            transition: all ease .2s;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+
+.project-list {
+    margin-top: 32px;
+
+    &-item {
+        a {
+            display: block;
+            text-decoration: none;
+            padding: 16px 20px;
+            margin-bottom: 16px;
+            text-align: center;
+            color: #colors[textColor];
+            background-color: #colors[buttonColor];
+            border: 3px solid #colors[buttonColor];
+            border-radius: 30px;
+            font-weight: bold;
+            transition: all ease .3s;
+
+            &:hover {
+                color: #colors[buttonColor];
+                background-color: transparent;
+            }
+        }
+
+    }
+}
